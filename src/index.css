@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  width: 100dvw;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: #07050f;
+}
+
+@keyframes aura-pulse {
+  0% {
+    transform: translate3d(-50%, -50%, 0) scale(1) rotate(0deg);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate3d(-50%, -50%, 0) scale(1.06) rotate(180deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) scale(1) rotate(360deg);
+    opacity: 0.55;
+  }
+}
+
+@keyframes menacing-float-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate3d(8px, -25px, 0) scale(1.08);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.15;
+  }
+}
+
+@keyframes menacing-float-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.95);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate3d(-10px, -35px, 0) scale(1.05);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.95);
+    opacity: 0.1;
+  }
+}
+
+.animate-aura-gpu {
+  animation: aura-pulse 10s infinite ease-in-out;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.animate-menacing-1 {
+  animation: menacing-float-1 5s infinite ease-in-out;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.animate-menacing-2 {
+  animation: menacing-float-2 6.5s infinite ease-in-out;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Custom Stylish JoJo Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.6);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.9);
+}
+
+/* Fighting Game UI Utilities */
+.font-arcade {
+  font-family: 'Rajdhani', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-jojo-display {
+  font-family: 'Cinzel', 'Times New Roman', Georgia, serif;
+}
+
+.font-impact-title {
+  font-family: 'Montserrat', Impact, 'Arial Black', sans-serif;
+}
+
+/* Arcade Beveled Box Effect */
+.arcade-bezel {
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.15), inset -1px -1px 0px rgba(0, 0, 0, 0.8), 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.arcade-bezel-gold {
+  box-shadow: inset 1px 1px 0px rgba(253, 224, 71, 0.4), inset -1px -1px 0px rgba(0, 0, 0, 0.9), 0 0 20px rgba(234, 179, 8, 0.25);
+}
+
+.arcade-bezel-purple {
+  box-shadow: inset 1px 1px 0px rgba(216, 180, 254, 0.4), inset -1px -1px 0px rgba(0, 0, 0, 0.9), 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.arcade-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 26, 0) 50%, 
+    rgba(0, 0, 0, 0.35) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.02),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.02)
+  );
+  background-size: 100% 4px, 6px 100%;
+}
+
+.clip-slanted {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+.clip-slanted-sm {
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.clip-banner {
+  clip-path: polygon(0 0, 100% 0, calc(100% - 16px) 100%, 0% 100%);
+}
+
